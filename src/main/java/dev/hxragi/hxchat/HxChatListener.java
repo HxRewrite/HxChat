@@ -29,13 +29,19 @@ public final class HxChatListener implements Listener {
         var plainText = PlainTextComponentSerializer.plainText().serialize(originalMessage);
         boolean isGlobal = plainText.startsWith("!");
 
-        var finalMessageContent = isGlobal
-                ? Component.text(plainText.substring(1).trim())
-                : originalMessage;
-
         if (isGlobal && plainText.length() == 1) {
             event.setCancelled(true);
             return;
+        }
+
+        String contentText = isGlobal ? plainText.substring(1).trim() : plainText;
+
+        Component finalMessageContent;
+
+        if (player.hasPermission("hxchat.format")) {
+            finalMessageContent = miniMessage.deserialize(contentText);
+        } else {
+            finalMessageContent = Component.text(contentText);
         }
 
         event.message(finalMessageContent);
@@ -80,7 +86,6 @@ public final class HxChatListener implements Listener {
                         .append(Component.newline())
                         .append(miniMessage.deserialize(config.noOneHeardMessage()));
             }
-
             return formattedMessage;
         });
     }

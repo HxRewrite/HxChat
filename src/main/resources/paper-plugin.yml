@@ -10,3 +10,6 @@ permissions:
   hxchat.admin:
     description: Permission for reload config
     default: op
+  hxchat.format:
+    description: Allows using MiniMessage formatting in chat
+    default: op
