@@ -1,0 +1,9 @@
+chat:
+  radius: 75
+  show-no-one-heard: true
+  global-format: "<dark_gray>[<yellow>G<dark_gray>] <white><player><gray>: <white><message>"
+  local-format: "<dark_gray>[<blue>L<dark_gray>] <white><player><gray>: <white><message>"
+
+messages:
+  reload: "<green>Configuration reloaded!"
+  no-one-heard: "<italic><dark_gray>No one heard you..."

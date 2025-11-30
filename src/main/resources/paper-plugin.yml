@@ -1,0 +1,12 @@
+name: HxChat
+version: '1.0'
+main: dev.hxragi.hxchat.HxChat
+api-version: '1.21.8'
+folia-supported: true
+description: Local and global chat for your server
+author: hxragi
+
+permissions:
+  hxchat.admin:
+    description: Permission for reload config
+    default: op
